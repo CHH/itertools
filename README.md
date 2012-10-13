@@ -13,9 +13,11 @@ Install via [composer](http://getcomposer.org):
 ## Usage
 
 `itertools` provides a small set of operations via a set of functions.
-Most functions operate by wrapping an iterator in another iterator, and
-returning this new iterator. This means that most operations are lazily
-evaluated, except where it doesn't make sense.
+Most functions operate by wrapping an iterator in another iterator. 
+This means that most operations are lazily evaluated, except where it doesn't make sense.
+
+That makes these operations an efficient solution for filtering and mapping Data Sets or
+Database Result Sets.
 
 ### `\Traversable itertools\slice(\Traversable $traversable, $start, [$count = -1])`
 
