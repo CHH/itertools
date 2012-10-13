@@ -109,7 +109,8 @@ array.
 
 ### `void itertools\walk(\Iterator $iterator, callable $callback)`
 
-Calls the callback function on each element of the iterator.
+Calls the callback function on each element of the iterator. Ignores the callback function's 
+return value, unlike [`iterator_apply()`](http://php.net/iterator_apply).
 
 ### `\Traversable itertools\to_iterator($value)`
 
