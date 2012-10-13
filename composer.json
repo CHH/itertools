@@ -1,0 +1,23 @@
+{
+    "name": "chh/itertools",
+    "description": "Common functional operations for iterators.",
+    "authors": [
+        {
+            "name": "Christoph Hochstrasser",
+            "email": "christoph.hochstrasser@gmail.com"
+        }
+    ],
+    "keywords": [
+        "functional", "iterators"
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "ext-spl": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "itertools\\": "lib/"
+        },
+        "files": ["lib/itertools.php"]
+    }
+}
