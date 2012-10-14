@@ -116,7 +116,7 @@ return value, unlike [`iterator_apply()`](http://php.net/iterator_apply).
 
 Converts any value into a valid iterator.
 
-* Iterators are passed straigt through.
+* Iterators are passed straight through.
 * Objects implementing only `\Traversable` are wrapped in an
   `\IteratorIterator` (for example `PDOStatement`).
 * Arrays are wrapped in an `ArrayIterator`.
