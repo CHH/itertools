@@ -65,7 +65,13 @@ $tuples = itertools\map(
     },
     $a, $b
 );
-# [ ['one', 1], ['two', 2], ['three', 3] ]
+
+foreach ($tuples as $t) {
+    var_export($t);
+}
+# ['one', 1]
+# ['two', 2]
+# ['three', 3]
 ```
 
 ### `\Traversable itertools\filter(\Traversable $traversable, [callable $callback])`
