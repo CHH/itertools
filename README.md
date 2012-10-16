@@ -115,13 +115,14 @@ array.
 
 ### `void itertools\walk(\Iterator $iterator, callable $callback)`
 
-Calls the callback function on each element of the iterator.
+Calls the callback function on each element of the iterator. Ignores the callback function's 
+return value, unlike [`iterator_apply()`](http://php.net/iterator_apply).
 
 ### `\Traversable itertools\to_iterator($value)`
 
 Converts any value into a valid iterator.
 
-* Iterators are passed straigt through.
+* Iterators are passed straight through.
 * Objects implementing only `\Traversable` are wrapped in an
   `\IteratorIterator` (for example `PDOStatement`).
 * Arrays are wrapped in an `ArrayIterator`.
