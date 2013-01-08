@@ -16,8 +16,12 @@ Install via [composer](http://getcomposer.org):
 Most functions operate by wrapping an iterator in another iterator. 
 This means that most operations are lazily evaluated, except where it doesn't make sense.
 
-That makes these operations an efficient solution for filtering and mapping Data Sets or
-Database Result Sets.
+That makes these functions an efficient solution for filtering or
+mapping:
+
+* Symfony Finder instances
+* `PDOStatement` or `Mysqli_Result` (since 5.4.0) objects.
+* ORM datasets/collections which implement `\Traversable`.
 
 ### `\Traversable itertools\slice(\Traversable $traversable, $start, [$count = -1])`
 

@@ -2,13 +2,11 @@
 
 namespace Bob\BuildConfig;
 
-task("default", array("test"), function() {
-    
-});
+task("default", array("test"));
 
 desc("Runs all tests.");
 task("test", array("phpunit.xml", "composer.json"), function() {
-    sh("phpunit");
+    sh("./vendor/bin/phpunit");
 });
 
 fileTask("phpunit.xml", array("phpunit.dist.xml"), function($task) {
@@ -20,5 +18,5 @@ fileTask("composer.json", array("composer.lock"), function($task) {
         file_put_contents("composer.phar", file_get_contents("http://getcomposer.org/composer.phar"));
     }
 
-    php("composer.phar install");
+    php("composer.phar install --dev");
 });
