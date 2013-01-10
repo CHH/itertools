@@ -8,7 +8,7 @@ to the same level than for arrays.
 Install via [composer](http://getcomposer.org):
 
     % wget http://getcomposer.org/composer.phar
-    % php composer.phar require chh/itertools:*
+    % php composer.phar require chh/itertools:~1.0
 
 ## Usage
 
