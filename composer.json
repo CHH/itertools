@@ -15,9 +15,8 @@
         "php": ">=5.3.3",
         "ext-spl": "*"
     },
-    "minimum-stability": "dev",
     "require-dev": {
-        "chh/bob": "*@dev",
+        "chh/bob": "~1.0@dev",
         "phpunit/phpunit": "~3.7"
     },
     "autoload": {

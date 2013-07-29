@@ -6,6 +6,7 @@ use Traversable;
 use itertools\FlipIterator;
 use itertools\MappingIterator;
 use itertools\RangeIterator;
+use itertools\ChunkingIterator;
 
 /**
  * Turns any value into an Iterator.
@@ -131,3 +132,12 @@ function walk(\Iterator $iterable, $callback)
     });
 }
 
+function cycle(\Traversable $iterable)
+{
+    return new \InfiniteIterator($iterable);
+}
+
+function chunk(\Traversable $iterable, $size)
+{
+    return new ChunkingIterator($iterable, $size);
+}

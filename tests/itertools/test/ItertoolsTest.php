@@ -74,4 +74,33 @@ class ItertoolsTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(range(1, 7), $numbers);
     }
+
+    function testChunk()
+    {
+        $range = new \ArrayIterator(range(0, 127));
+        $chunks = [];
+
+        foreach (itertools\chunk($range, 32) as $chunk) {
+            $chunks[] = $chunk;
+        }
+
+        $this->assertEquals(32, count($chunks[0]));
+        $this->assertEquals(4, count($chunks));
+    }
+
+    function testCycle()
+    {
+        $colors = new \ArrayIterator(["A", "B", "C", "D"]);
+        $it = itertools\slice(itertools\cycle($colors), 0, 10);
+        $list = [];
+
+        foreach ($it as $val) {
+            $list[] = $val;
+        }
+
+        $this->assertEquals(
+            ["A", "B", "C", "D", "A", "B", "C", "D", "A", "B"],
+            $list
+        );
+    }
 }
