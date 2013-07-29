@@ -132,11 +132,42 @@ function walk(\Iterator $iterable, $callback)
     });
 }
 
+/**
+ * Cycles through the values of the iterator.
+ *
+ * For example:
+ *
+ *     foreach(cycle(new \ArrayIterator("a", "b", "c",  "d")) as $letter) {
+ *         echo "$letter";
+ *     }
+ *
+ * Yields:
+ *
+ *     abcdabcdabcdab…
+ *
+ * Note: This iterator does _not_ end.
+ *
+ * @param \Traversable $iterable
+ * @return \Iterator
+ */
 function cycle(\Traversable $iterable)
 {
     return new \InfiniteIterator($iterable);
 }
 
+/**
+ * Partition the values returned by the iterator in chunks which
+ * have a max size of elements.
+ *
+ * Example:
+ *
+ *     $chunker = itertools\chunk(itertools\xrange(0, 64), 32);
+ *     var_dump(iterator_count($chunker))
+ *     // => int(2)
+ *
+ * @param \Traversable $iterable
+ * @param int $size
+ */
 function chunk(\Traversable $iterable, $size)
 {
     return new ChunkingIterator($iterable, $size);
